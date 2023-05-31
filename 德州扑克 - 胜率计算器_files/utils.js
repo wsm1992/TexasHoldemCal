@@ -25,6 +25,39 @@ function randomPick (n, m) {
   }
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function combinations(arr, k) {
+  const result = [];
+
+  function backtrack(curr, start) {
+    if (curr.length === k) {
+      result.push([...curr]);
+      return;
+    }
+
+    for (let i = start; i < arr.length; i++) {
+      curr.push(arr[i]);
+      backtrack(curr, i + 1);
+      curr.pop();
+    }
+  }
+
+  backtrack([], 0);
+  return  shuffleArray(result);;
+}
+
+function randomPop(arr) {
+  const index = Math.floor(Math.random() * arr.length);
+  return arr.splice(index, 1)[0];
+}
+
 Array.prototype.remove = function (val) {
   var index = this.indexOf(val)
   if (index > -1) {
@@ -127,4 +160,9 @@ function getIndex (bool, arr) {
   var result = bool ? '1' : '0'
   // return result += arr.map((v, i) => (v ? Array(v).fill(s[i]).join('') : '')).join('')
   return result += arr.join('')
+}
+
+function updateProgressBar(progress) {
+  var progressBar = document.querySelector('.progress');
+  progressBar.style.width = progress + '%';
 }
