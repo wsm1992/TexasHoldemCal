@@ -69,7 +69,13 @@ function stopCalculate(){
 
 function editHandCard(event) {
   let cardContainer = event.target.parentNode
+  let pubContainer = id("pub")
   let index = Array.from(chosen.children).indexOf(cardContainer)
+  let pubIndex = Array.from(chosen.children).indexOf(pubContainer)
+  console.log(pubIndex);
+  if (index > pubIndex){
+	index--;
+  }
   handCard = handCards[index]
   //console.log(handCard)
   for(let i = 0; i< handCard[index].length; i++){
@@ -102,7 +108,7 @@ pubButton.addEventListener('click', function () {
     alert(LANG.pub)
   } else {
     if (slen === 0) return;
-    let s = '<div class="cards">'
+    let s = '<div id="pub" class="cards">'
     for (let i = 0; i < slen; i++) {
       publicCards.push(selectedPokers[i].id.split('_'))
       selectedPokers[i].classList.remove('selected')
@@ -175,11 +181,6 @@ resetButton.addEventListener('click', function () {
   }
     stopCalculate();
 })
-
-function showStopcal (){
-	  console.log("stopcal: "+stopCal)
-	  setTimeout(showStopcal, 1000);
-}
   
 window.onload = function () {
   for (let i = 0; i < pokers.length; i++) {
