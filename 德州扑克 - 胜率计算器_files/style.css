@@ -216,3 +216,20 @@ table#outs th,
 table#outs td {
   width: 33.33%;
 }
+
+.adjust-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.adjust-buttons button {
+  padding: 5px;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.adjust-buttons button:hover {
+  background-color: #ddd;
+}

@@ -17,14 +17,14 @@
   </div>
   <table id="outs">
   <tr>
-    <th>反超張數</th>
-    <th>牌堆剩餘數</th>
+    <th>反超張數 <label id="counterNum"></label></th>
+    <th>牌堆剩餘數<label id="deckNum"></label></th>
     <th>可跟注尺吋</th>
   </tr>
   <tr>
-    <td><input type="number" id="counter" value = 9 /></td>
-    <td><input type="number" id="deck" value = 46 /></td>
-    <td><label id="result"></label></td>
+	<td><input type="range" id="counter" min="0" max="26" value="9"></td>
+    <td><input type="range" id="deck" min="0" max="52" value="46"></td>
+    <td><label id="result">0</label></td>   
   </tr>
 </table>
   <hr>

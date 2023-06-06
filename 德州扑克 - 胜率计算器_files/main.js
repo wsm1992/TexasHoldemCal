@@ -39,6 +39,8 @@ var processResult = 0;
 // 獲取反超張數和牌堆剩餘數的輸入元素
 var counterInput = id("counter");
 var deckInput = id("deck");
+var counterNum = id("counterNum");
+var deckNum = id("deckNum");
 
 handButton.addEventListener('click', function () {
   let selectedPokers = document.querySelectorAll('.container .selected')
@@ -339,5 +341,8 @@ function updateResult() {
   // 更新結果標籤的內容
   var resultLabel = document.getElementById("result");
   resultLabel.textContent = resultValue.toString();
+  
+  counterNum.innerHTML = counterValue;
+  deckNum.innerHTML = deckValue;
 }
 
