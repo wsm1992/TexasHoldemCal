@@ -36,6 +36,9 @@ var resetButton = id('reset')
 var pokers = document.querySelectorAll('.container .poker')
 var process = id('process')
 var processResult = 0;
+// 獲取反超張數和牌堆剩餘數的輸入元素
+var counterInput = id("counter");
+var deckInput = id("deck");
 
 handButton.addEventListener('click', function () {
   let selectedPokers = document.querySelectorAll('.container .selected')
@@ -186,6 +189,7 @@ window.onload = function () {
   for (let i = 0; i < pokers.length; i++) {
     pokers[i].onclick = triggerSelected(i)
   }
+  updateResult();
 }
 
 function triggerSelected (i) {
@@ -319,3 +323,21 @@ function whoWin (publicCards, handCards) {
   //console.log(result);
   return result
 }
+
+// 監聽輸入值變化事件
+counterInput.addEventListener("input", updateResult);
+deckInput.addEventListener("input", updateResult);
+
+// 更新結果
+function updateResult() {
+  var counterValue = parseInt(counterInput.value);
+  var deckValue = parseInt(deckInput.value);
+  
+  // 計算可跟注尺吋
+  var resultValue = counterValue / (deckValue - 2 * counterValue);
+  
+  // 更新結果標籤的內容
+  var resultLabel = document.getElementById("result");
+  resultLabel.textContent = resultValue.toString();
+}
+

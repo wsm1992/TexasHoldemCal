@@ -15,6 +15,18 @@
   <div class="quote imp">
     每次选择两张手牌，点击「手牌」按钮选定，可以添加二至多名玩家。然后选择 0～4 张公共牌。选完后点击计算按钮计算胜率。<b>已修改算法，當結果可能性大於10000時，將會分批計算結果，計算進度可參照進度條。</b>点击计算后大概几秒钟后会算出结果，请耐心等候。
   </div>
+  <table id="outs">
+  <tr>
+    <th>反超張數</th>
+    <th>牌堆剩餘數</th>
+    <th>可跟注尺吋</th>
+  </tr>
+  <tr>
+    <td><input type="number" id="counter" value = 9 /></td>
+    <td><input type="number" id="deck" value = 46 /></td>
+    <td><label id="result"></label></td>
+  </tr>
+</table>
   <hr>
   <div class="container">
     <div id="spade_A" class="spade poker">A</div>
@@ -90,11 +102,11 @@
     <tbody id="info"></tbody>
   </table>
 
+
   <script src="./德州扑克 - 胜率计算器_files/utils.js"></script>
   <script src="./德州扑克 - 胜率计算器_files/detect.js"></script>
   <script src="./德州扑克 - 胜率计算器_files/main.js"></script>
   <script src="./德州扑克 - 胜率计算器_files/lang-cn.js"></script>
-
 
 
 </body></html>
